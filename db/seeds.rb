@@ -6,25 +6,46 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+puts "Cadastrando os tipos de contactos..."
+Kind.create!(
+    [
+        { 
+            description: "Home"
+        },
+        { 
+            description: "Company"
+        },
+        { 
+            description: "School"
+        }
+    ]
+)
+
+puts "Fim do cadastrando dos tipos contactos"
+
 puts "Cadastrando os contactos..."
 Contact.create!(
     [
         { 
             name: "Star Wars",
             email: "vicenteviciii@gmail.com", 
-            birthdate: "12/12/2022"
+            birthdate: "12/12/2022",
+            kind_id: Kind.all.sample.id
         },
         { 
             name: "Ruby",
             email: "star@gmail.com", 
-            birthdate: "12/12/2022"
+            birthdate: "12/12/2022",
+            kind_id: Kind.all.sample.id
         },
         { 
             name: "Rails",
             email: "rails@gmail.com", 
-            birthdate: "12/12/2022"
+            birthdate: "12/12/2022",
+            kind_id: Kind.all.sample.id
         }
     ]
 )
 
 puts "Fim do cadastrando dos contactos"
+
