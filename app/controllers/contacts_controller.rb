@@ -4,7 +4,9 @@ class ContactsController < ApplicationController
   # GET /contacts
   def index
     @contacts = Contact.all
-
+    #render json: @contacts, root: true
+    #render json: @contacts, only: [:name, :email]
+    #render json: @contacts, except: [:name, :email]
     render json: @contacts
   end
 
