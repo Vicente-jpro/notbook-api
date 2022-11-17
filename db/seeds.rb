@@ -30,19 +30,19 @@ Contact.create!(
             name: "Star Wars",
             email: "vicenteviciii@gmail.com", 
             birthdate: "12/12/2022",
-            kind_id: Kind.first.id
+            kind_id: Kind.all.sample.id
         },
         { 
             name: "Ruby",
             email: "star@gmail.com", 
             birthdate: "12/12/2022",
-            kind_id: Kind.last.id
+            kind_id: Kind.all.sample.id
         },
         { 
             name: "Rails",
             email: "rails@gmail.com", 
             birthdate: "12/12/2022",
-            kind_id: Kind.first.id
+            kind_id: Kind.all.sample.id
         }
     ]
 )
