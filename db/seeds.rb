@@ -5,3 +5,26 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+puts "Cadastrando os contactos..."
+Contact.create!(
+    [
+        { 
+            name: "Star Wars",
+            email: "vicenteviciii@gmail.com", 
+            birthdate: "12/12/2022"
+        },
+        { 
+            name: "Ruby",
+            email: "star@gmail.com", 
+            birthdate: "12/12/2022"
+        },
+        { 
+            name: "Rails",
+            email: "rails@gmail.com", 
+            birthdate: "12/12/2022"
+        }
+    ]
+)
+
+puts "Fim do cadastrando dos contactos"

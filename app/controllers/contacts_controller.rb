@@ -4,7 +4,17 @@ class ContactsController < ApplicationController
   # GET /contacts
   def index
     @contacts = Contact.all
-
+    
+    #Mostrar apenas os atributos
+    #render json: @contacts, root: true
+    #render json: @contacts, only: [:name, :email]
+    
+    #Excluir atributos
+    #render json: @contacts, except: [:name, :email]
+    
+    #Mesclar novos atributos
+    #render json: @contacts.map{ |contact| contact.attributes.merge({author: "Vicente Simão"})}
+    #render json: @contacts, methods: :author, root: true
     render json: @contacts
   end
 
