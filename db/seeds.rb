@@ -47,5 +47,25 @@ Contact.create!(
     ]
 )
 
-puts "Fim do cadastrando dos contactos"
+puts "Fim do cadastro dos contactos"
 
+puts "Cadastrando os phones..."
+
+Phone.create!(
+    [
+        {
+            number: "944889722",
+            contact_id: Contact.all.sample.id
+        },
+        {
+            number: "889722944",
+            contact_id: Contact.all.sample.id
+        },
+        {
+            number: "972294488",
+            contact_id: Contact.all.sample.id
+        }
+    ]
+)
+
+puts "Fim do cadastro dos phones"
