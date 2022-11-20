@@ -1,6 +1,7 @@
 class Contact < ApplicationRecord
     belongs_to :kind
     has_many :phones
+    accepts_nested_attributes_for :phones
     def author
       "Vicente Simão"
     end
@@ -15,6 +16,9 @@ class Contact < ApplicationRecord
             include: { 
                 kind: {
                     only: :description
+                },
+                phones: {
+                    only: :number
                 } 
             }
         )
