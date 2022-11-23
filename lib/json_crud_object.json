@@ -1,0 +1,43 @@
+{
+    "contact": {
+         "id": 1,
+         "name": "Nagrelha",
+         "email": "nagrelha@gmail.com",
+         "birthdate": "2022-12-12",
+         "kind_id": 3,
+         "kind": {
+             "description": "School"
+         },
+         "phones_attributes": [
+             {   "id": 5,
+                 "number": "000000000"
+             }
+         ]
+     }
+ }
+
+
+
+ {
+    "contact": {
+        "name": "Nagrelha",
+        "email": "nagrelha@gmail.com",
+        "birthdate": "2022-12-12",
+        "kind_id": 3,
+        "id": 6,
+        "kind": {
+            "description": "School"
+        },
+        "phones_attributes": [
+            {
+                "id": 5,
+                "number": "000000000"
+            },
+
+            {
+                "id": 20,
+                "_destroy": 1
+            }
+        ]
+    }
+}

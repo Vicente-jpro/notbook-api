@@ -1,5 +1,7 @@
 class Contact < ApplicationRecord
     belongs_to :kind
+    has_many :phones
+    accepts_nested_attributes_for :phones, allow_destroy: true
     def author
       "Vicente Simão"
     end
@@ -13,7 +15,10 @@ class Contact < ApplicationRecord
             methods: [:author, :kind_description],
             include: { 
                 kind: {
-                    only: :description
+                    only: [:id, :description]
+                },
+                phones: {
+                    only: [:id, :number]
                 } 
             }
         )
