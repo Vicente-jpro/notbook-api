@@ -4,6 +4,10 @@ class ContactSerializer < ActiveModel::Serializer
   belongs_to :kind
   has_many :phones
   has_one :address
+
+  meta do 
+    { author: "Vicente Simão" }
+  end
   
   def attributes(*args)
     b = super(*args)
