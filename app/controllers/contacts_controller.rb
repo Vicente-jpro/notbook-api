@@ -15,12 +15,12 @@ class ContactsController < ApplicationController
     #Mesclar novos atributos
     #render json: @contacts.map{ |contact| contact.attributes.merge({author: "Vicente Simão"})}
     #render json: @contacts, methods: :author, root: true
-    render json: @contacts
+    render json: @contacts, include: :kind
   end
 
   # GET /contacts/1
   def show
-    render json: @contact
+    render json: @contact, include: :kind
   end
 
   # POST /contacts
