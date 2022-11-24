@@ -69,3 +69,27 @@ Phone.create!(
 )
 
 puts "Fim do cadastro dos phones"
+
+puts "Cadastrando o endereços..."
+
+Address.create!(
+    [
+        {
+            street: "Cidade do Kilamba",
+            city: "Luanda",
+            contact_id: Contact.all.sample.id
+        },
+        {
+            street: "kk 5000",
+            city: "Luanda",
+            contact_id: Contact.all.sample.id
+        },
+        {
+            street: "30 Praça nova",
+            city: "Luanda",
+            contact_id: Contact.all.sample.id
+        }
+    ]
+)
+
+puts "Fim do cadastro de endereços..."

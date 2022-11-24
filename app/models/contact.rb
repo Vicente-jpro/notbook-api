@@ -1,7 +1,11 @@
 class Contact < ApplicationRecord
     belongs_to :kind
     has_many :phones
+    has_one :address
+
     accepts_nested_attributes_for :phones, allow_destroy: true
+    accepts_nested_attributes_for :address, update_only: true
+
     def author
       "Vicente Simão"
     end
@@ -19,7 +23,10 @@ class Contact < ApplicationRecord
                 },
                 phones: {
                     only: [:id, :number]
-                } 
+                },
+                address: {
+                    only: [:id, :street, :city]
+                }
             }
         )
     end
