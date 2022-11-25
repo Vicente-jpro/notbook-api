@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   resources :kinds
   resources :contacts do 
-    resource :kind
+    resource :kind, only: [:show]
+    resource :phone, only: [:show]
   end
 
 end
