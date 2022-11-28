@@ -1,6 +1,19 @@
 class AddressesController < ApplicationController
     before_action :set_address
 
+
+    # POST /contacts/1/address
+    def create 
+      @address = Address.new(params_address)
+
+      if @address.save
+        render json: @address, status: :created, location: contact_address_url(@address)
+      else
+        render json: @address.errors, status: :unprocessable_entity  
+      end
+    end
+
+    # PATCH /contacts/1/address
     def update 
       if @address.update(params_address)
         render json: @address
