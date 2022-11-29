@@ -1,5 +1,5 @@
 class PhonesController < ApplicationController
-    before_action :set_phones
+    before_action :set_contact
 
 
     # PATCH /contacts/1/phone
@@ -16,7 +16,7 @@ class PhonesController < ApplicationController
     end
     private
     # Use callbacks to share common setup or constraints between actions.
-    def set_phones
+    def set_contact
       @contact = Contact.find(params[:contact_id])
     end
 

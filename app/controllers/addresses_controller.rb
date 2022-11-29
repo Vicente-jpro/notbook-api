@@ -1,5 +1,5 @@
 class AddressesController < ApplicationController
-    before_action :set_address
+    before_action :set_contact
 
 
     # POST /contacts/1/address
@@ -38,7 +38,7 @@ class AddressesController < ApplicationController
 
     private
     # Use callbacks to share common setup or constraints between actions.
-    def set_address
+    def set_contact
       @contact = Contact.find(params[:contact_id])
     end
 
