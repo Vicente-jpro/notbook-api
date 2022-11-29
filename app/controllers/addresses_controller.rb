@@ -22,6 +22,15 @@ class AddressesController < ApplicationController
       end
     end
 
+    # DELETE /contacts/1/address
+    def destroy 
+      if @contact.address.destroy
+        render json: @contact.address
+      else
+        render json: @contact.address.errors, status: :unprocessable_entity
+      end
+    end
+
     # GET /contacts/1/address
     def show 
       render json: @contact.address
