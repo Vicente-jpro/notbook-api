@@ -21,6 +21,11 @@ class PhonesController < ApplicationController
         render json: @contact.phones.errors, status: :unprocessable_entity
        end
     end
+
+    def destroy 
+      @phone = Phone.find(params_phones[:id])
+      @phone.destroy 
+    end
     
     # GET /contacts/1/phones
     def show 
