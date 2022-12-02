@@ -6,16 +6,17 @@ class PhonesController < ApplicationController
        @contact.phones << Phone.new(params_phones)
        
        if @contact.save
-        render json: @contact.phones, status: :created, location: contact_phones_url(@contact.phones)
+        render json: @contact.phones, status: :created, location: contact_phone_url(@contact.phones)
        else
         render json: @contact.phones.errors, status: :unprocessable_entity
        end
     end
+
     # PATCH /contacts/1/phone
     def update 
       @phone = Phone.find(params_phones[:id])
       if @phone.update(params_phones)
-         render json: @contact.phones, status: :creates, location: contact_phones_url(@contact.phones)
+         render json: @contact.phones
        else
         render json: @contact.phones.errors, status: :unprocessable_entity
        end
